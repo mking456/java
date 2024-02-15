@@ -180,9 +180,25 @@ public class arraycc {
     }
   }
 
+  public static int twoSum(int[] nums, int target) {
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = i + 1; j < nums.length; j++) {
+        if (nums[i] + nums[j] == target) {
+          target++;
+        }
+      }
+
+    }
+    System.out.println();
+  }
+
   public static void main(Strings[] args) {
-    int tripplet[] = { -1, 1, 2, 2 };
-    Tripplet(tripplet);
+
+    int nums[] = { 2, 7, 11, 15 };
+    int target = 9;
+    System.out.println(twoSum(nums, target));
+    // int tripplet[] = { -1, 1, 2, 2 };
+    // Tripplet(tripplet);
 
     // int arr[] = { 10, 15, 17, 19, 21, 31 };
     // int searchvalue = 19;

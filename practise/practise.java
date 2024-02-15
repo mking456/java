@@ -72,14 +72,29 @@ public class practise {
 
   }
 
-  public static void main(Strings[] args) {
-    int[][] nums = { { 1, 4, 9 }, { 11, 4, 3 }, { 2, 2, 3 } };
-    int sum = 0;
-    // sum of 2nd row of element
-    for (int j = 0; j < nums[0].length; j++) {
-      sum += nums[0][j];
+  public static int allOccurence(int arr[], int i, int key) {
+    if (arr[i] == arr.length) {
+      return 1;
     }
-    System.out.println("sum of nums is" + sum);
+    if (arr[i] == key) {
+      return i;
+    }
+    return allOccurence(arr, i + 1, key);
+  }
+
+  public static void main(Strings[] args) {
+    int arr[] = { 3, 2, 4, 5, 6, 2, 7, 2, 2 };
+    int key = 2;
+    allOccurence(arr, 0, key);
+    System.out.println();
+
+    // int[][] nums = { { 1, 4, 9 }, { 11, 4, 3 }, { 2, 2, 3 } };
+    // int sum = 0;
+    // // sum of 2nd row of element
+    // for (int j = 0; j < nums[0].length; j++) {
+    // sum += nums[0][j];
+    // }
+    // System.out.println("sum of nums is" + sum);
 
     // int[][] array = { { 4, 7, 8 }, { 8, 8, 7 } };
     // int count7 = 0;
