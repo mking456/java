@@ -8,22 +8,110 @@ public class ArrayLists {
     list.set(indx2, temp);
   }
 
+  public static int storeWater(ArrayList<Integer> list) {
+    int maxWater = 0;
+    int lP = 0;
+    int rP = list.size() - 1;
+    while (lP < rP) {
+      // calculate water area
+      int ht = Math.min(list.get(lP), list.get(rP));
+      int width = rP - lP;
+      int currWater = ht * width;
+      maxWater = Math.max(maxWater, currWater);
+      // update pointer
+      if (list.get(lP) < list.get(rP)) {
+        lP++;
+      } else {
+        rP--;
+      }
+    }
+    return maxWater;
+  }
+
+  public static boolean pairSum(ArrayList<Integer> list, int target) {
+    int lp = 0;
+    int rp = list.size() - 1;
+    while (lp != rp) {
+      // case 1
+      if (list.get(lp) + list.get(rp) == target) {
+        return true;
+      }
+      // case 2
+      if (list.get(lp) + list.get(rp) == target) {
+        lp++;
+      }
+      // case 2
+      else {
+        rp--;
+      }
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
+
     ArrayList<Integer> list = new ArrayList<>();
+    int target = 8;
+    // 1,8,6,2,5,4,8,3,7
+    list.add(1);
+    list.add(8);
+    list.add(6);
     list.add(2);
     list.add(5);
-    list.add(9);
+    list.add(4);
+    list.add(8);
     list.add(3);
-    list.add(6);
-    // int indx1 = 1;
-    // int indx2 = 2;
+    list.add(7);
+    System.out.println(pairSum(list, target));
+    // System.out.println(storeWater(list));
+
+    // ArrayList<Integer> list1 = new ArrayList<>();
+    // ArrayList<Integer> list2 = new ArrayList<>();
+    // ArrayList<Integer> list3 = new ArrayList<>();
+
+    // for (int i = 0; i < 5; i++) {
+    // list1.add(i * 1);
+    // list2.add(i * 2);
+    // list3.add(i * 3);
+    // }
+    // list.add(list1);
+    // list.add(list2);
+    // list.add(list3);
+
+    // System.out.print(list);
+    // list.add(3);
+    // list.add(4);
+    // list.add(list);
+
+    // ArrayList<Integer> list2 = new ArrayList<>();
+    // list2.add(8);
+    // list2.add(7);
+    // list.add(list2);
+
+    // for (int i = 0; i < list.size(); i++) {
+    // ArrayList<Integer> cuurlist = list.get(i);
+    // for (int j = 0; j < cuurlist.size(); j++) {
+    // System.out.print(cuurlist.get(j) + " ");
+    // }
+    // System.out.println();
+    // }
     // System.out.println(list);
-    // swap(list, indx1, indx2);
+
+    // ArrayList<Integer> list = new ArrayList<>();
+    // list.add(2);
+    // list.add(5);
+    // list.add(9);
+    // list.add(3);
+    // list.add(6);
+    // // int indx1 = 1;
+    // // int indx2 = 2;
+    // // System.out.println(list);
+    // // swap(list, indx1, indx2);
+    // // System.out.println(list);
+    // Collections.sort(list);
     // System.out.println(list);
-    Collections.sort(list);
-    System.out.println(list);
-    Collections.sort(list, Collections.reverseOrder());
-    System.out.println(list);
+    // Collections.sort(list, Collections.reverseOrder());
+    // System.out.println(list);
     // operations
     // 1)Add element O(1)
     // list.add(1);

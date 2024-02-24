@@ -187,9 +187,8 @@ public class arraycc {
           target++;
         }
       }
-
     }
-    System.out.println();
+    return target;
   }
 
   public static void main(Strings[] args) {
